@@ -1,0 +1,29 @@
+.FormDivAdd {
+    border-radius: 5px;
+    background-color: rgb(182, 126, 126);
+    padding: 20px;
+    border: 5px solid black;
+}
+.InputAdd, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.BtnInput {
+    width: 100%;
+    background-color: #421438;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+      
+.BtnInput:hover {
+    background-color: #92267d;
+}
