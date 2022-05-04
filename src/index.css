@@ -16,19 +16,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
+ /* header {
   background-color: var(--color-bg);
   padding: 2rem 0;
   text-align: center;
-}
-header > a {
+}  */
+/* header > a {
   color: white;
   text-decoration: none;
   padding: 0 1rem;
 }
 header > a:hover {
   text-decoration: underline;
-}
+}  */
 
 h1 {
   
@@ -55,7 +55,7 @@ main a {
 main a:hover {
   text-decoration: underline;
 }
-.active {
+/* .active {
   color: red;
   cursor: default;
-}
+} */

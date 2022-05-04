@@ -1,4 +1,7 @@
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import authOperations from '../redux/auth/auth-operation';
+
 const styles = {
   form: {
     width: 320,
@@ -13,11 +16,19 @@ const styles = {
 export const LoginView = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+
+  const hendleSubmit = e => {
+    e.preventDefault();
+    dispatch(authOperations.logIn({ email, password }));
+    setEmail('');
+    setPassword('');
+  };
   return (
     <div>
       <h1>Страница логина</h1>
 
-      <form style={styles.form} autoComplete="off">
+      <form style={styles.form} autoComplete="off" onSubmit={hendleSubmit}>
         <label style={styles.label}>
           Почта
           <input

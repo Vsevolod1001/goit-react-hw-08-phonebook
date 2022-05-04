@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import authOperations from '../redux/auth/auth-operation';
+
 const styles = {
   form: {
     width: 320,
