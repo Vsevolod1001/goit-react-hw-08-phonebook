@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+export const BASE_URL = 'https://connections-api.herokuapp.com';
 const filterSlise = createSlice({
   name: 'filter',
   initialState: '',
@@ -18,7 +19,7 @@ export default filterSlise.reducer;
 export const contactApi = createApi({
   reducerPath: 'contactApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://connections-api.herokuapp.com',
+    baseUrl: `${BASE_URL}`,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       if (token) {

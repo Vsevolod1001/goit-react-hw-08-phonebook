@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { BASE_URL } from 'redux/contacts/contactSlice';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+// axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const token = {
   set(token) {
@@ -14,7 +15,7 @@ const token = {
 
 const register = createAsyncThunk('auth/register', async credentials => {
   try {
-    const { data } = await axios.post('/users/signup', credentials);
+    const { data } = await axios.post(`${BASE_URL}/users/signup`, credentials);
     token.set(data.token);
     return data;
   } catch (error) {}
@@ -22,7 +23,7 @@ const register = createAsyncThunk('auth/register', async credentials => {
 
 const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
-    const { data } = await axios.post('/users/login', credentials);
+    const { data } = await axios.post(`${BASE_URL}/users/login`, credentials);
     token.set(data.token);
     return data;
   } catch (error) {}
@@ -30,7 +31,7 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
 
 const logOut = createAsyncThunk('auth/logOut', async credentials => {
   try {
-    await axios.post('/users/logout', credentials);
+    await axios.post(`${BASE_URL}/users/logout`, credentials);
     token.unset();
   } catch (error) {}
 });
