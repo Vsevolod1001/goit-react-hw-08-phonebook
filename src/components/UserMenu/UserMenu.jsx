@@ -1,5 +1,6 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import authSelectors from 'redux/auth/auth-selectors';
+import authOperations from '../../redux/auth/auth-operation';
 
 const styles = {
   name: {
@@ -10,11 +11,13 @@ const styles = {
 };
 
 export const UserMenu = () => {
+  const dispatch = useDispatch();
+
   const name = useSelector(authSelectors.getUserName);
   return (
     <div>
       <span style={styles.name}>Welcome, {name}</span>
-      <button>logOut</button>
+      <button onClick={() => dispatch(authOperations.logOut())}>logOut</button>
     </div>
   );
 };
