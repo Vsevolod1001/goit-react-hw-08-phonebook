@@ -1,34 +1,38 @@
-import { useSelector } from 'react-redux';
-import { getFilter } from 'redux/contacts/selectors';
-import { useDeleteContactMutation } from 'redux/contacts/contactSlice';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getFilterContacts } from 'redux/contacts/contact-selectors';
+import {
+  removeContact,
+  fetchContacts,
+} from 'redux/contacts/contacts-operations';
 import s from './ContactList.module.css';
 
-export const ContactList = ({ contacts }) => {
-  const [deleteContact] = useDeleteContactMutation();
-  const filter = useSelector(getFilter);
+export const ContactList = () => {
+  const contacts = useSelector(getFilterContacts);
+  const dispatch = useDispatch();
 
-  const visible = contacts?.filter(us =>
-    us.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   return (
     <div>
-      {contacts &&
-        visible.map(({ id, name, number }) => (
-          <li key={id} className={s.listCounterCircle}>
-            <p className={s.listCircle}>
-              {name}: {number}
-            </p>
+      {contacts.map(({ id, name, number }) => (
+        <li key={id} className={s.listCounterCircle}>
+          <p className={s.listCircle}>
+            {name}: {number}
+          </p>
 
-            <button
-              type="button"
-              className={s.BtnInput}
-              id={id}
-              onClick={() => deleteContact(id)}
-            >
-              delete
-            </button>
-          </li>
-        ))}
+          <button
+            type="button"
+            className={s.BtnInput}
+            id={id}
+            onClick={() => dispatch(removeContact(id))}
+          >
+            delete
+          </button>
+        </li>
+      ))}
     </div>
   );
 };

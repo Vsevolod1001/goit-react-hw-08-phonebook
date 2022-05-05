@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import authOperations from '../redux/auth/auth-operation';
+import { logIn } from 'redux/auth/auth-options';
 
 const styles = {
   form: {
@@ -20,7 +20,7 @@ export const LoginView = () => {
 
   const hendleSubmit = e => {
     e.preventDefault();
-    dispatch(authOperations.logIn({ email, password }));
+    dispatch(logIn({ email, password }));
     setEmail('');
     setPassword('');
   };

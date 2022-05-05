@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import authSelectors from 'redux/auth/auth-selectors';
-import authOperations from '../../redux/auth/auth-operation';
-
+import { getUserName } from 'redux/auth/auth-selectors';
+import { logOut } from 'redux/auth/auth-options';
 const styles = {
   name: {
     fontWeight: 700,
@@ -13,11 +12,11 @@ const styles = {
 export const UserMenu = () => {
   const dispatch = useDispatch();
 
-  const name = useSelector(authSelectors.getUserName);
+  const name = useSelector(getUserName);
   return (
     <div>
       <span style={styles.name}>Welcome, {name}</span>
-      <button onClick={() => dispatch(authOperations.logOut())}>logOut</button>
+      <button onClick={() => dispatch(logOut())}>logOut</button>
     </div>
   );
 };
