@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/hw8-test/static/css/main.c52a89c4.css",
-    "main.js": "/hw8-test/static/js/main.41f56e31.js",
+    "main.js": "/hw8-test/static/js/main.743ab4be.js",
     "index.html": "/hw8-test/index.html",
     "main.c52a89c4.css.map": "/hw8-test/static/css/main.c52a89c4.css.map",
-    "main.41f56e31.js.map": "/hw8-test/static/js/main.41f56e31.js.map"
+    "main.743ab4be.js.map": "/hw8-test/static/js/main.743ab4be.js.map"
   },
   "entrypoints": [
     "static/css/main.c52a89c4.css",
-    "static/js/main.41f56e31.js"
+    "static/js/main.743ab4be.js"
   ]
 }
