@@ -5,13 +5,15 @@ import { Filter } from 'components/Filter/Filter';
 
 export const ContactsView = () => {
   return (
-    <div style={{ width: 400 }}>
-      <h1>Phonebook</h1>
-      <AddContact />
-      <Section name="Contacts">
-        <Filter />
-        <ContactList />
-      </Section>
-    </div>
+    <>
+      <div style={{ width: 400 }}>
+        <h1>Phonebook</h1>
+        <AddContact />
+        <Section name="Contacts">
+          <Filter />
+          <ContactList />
+        </Section>
+      </div>
+    </>
   );
 };

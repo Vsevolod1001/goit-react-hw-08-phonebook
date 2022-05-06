@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getUserName } from 'redux/auth/auth-selectors';
 import { logOut } from 'redux/auth/auth-options';
 const styles = {
