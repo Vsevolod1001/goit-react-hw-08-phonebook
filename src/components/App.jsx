@@ -15,7 +15,6 @@ import { Spinner } from './Spinner/Spinner';
 export const App = () => {
   const dispatch = useDispatch();
   const refresh = useSelector(getCurrentRefresh);
-  console.log(refresh);
 
   useEffect(() => {
     dispatch(fetchCurrentUser());

@@ -1,4 +1,4 @@
-import { createReducer } from '@reduxjs/toolkit';
+import { combineReducers, createReducer } from '@reduxjs/toolkit';
 import {
   addContact,
   fetchContacts,
@@ -27,4 +27,10 @@ export const error = createReducer(null, {
 
   [removeContact.rejected]: (_, { payload }) => payload,
   [removeContact.pending]: () => null,
+});
+
+export default combineReducers({
+  contactList,
+  contactFilter,
+  error,
 });
