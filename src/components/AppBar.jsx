@@ -16,7 +16,7 @@ const styles = {
   },
 };
 
-export const AppBar = () => {
+const AppBar = () => {
   const isLoggedIn = useSelector(getLoggedIn);
   return (
     <div>
@@ -28,3 +28,4 @@ export const AppBar = () => {
     </div>
   );
 };
+export default AppBar;

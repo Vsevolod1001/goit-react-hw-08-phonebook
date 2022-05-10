@@ -3,7 +3,7 @@ import { Section } from 'components/Section/Section';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 
-export const ContactsView = () => {
+const ContactsView = () => {
   return (
     <>
       <div style={{ width: 400 }}>
@@ -17,3 +17,4 @@ export const ContactsView = () => {
     </>
   );
 };
+export default ContactsView;

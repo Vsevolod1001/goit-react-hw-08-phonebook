@@ -13,7 +13,7 @@ const styles = {
   },
 };
 
-export const RegisterView = () => {
+const RegisterView = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -63,3 +63,4 @@ export const RegisterView = () => {
     </div>
   );
 };
+export default RegisterView;
