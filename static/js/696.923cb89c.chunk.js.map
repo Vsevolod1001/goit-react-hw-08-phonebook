@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/696.923cb89c.chunk.js","mappings":"iKAOA,UAPqB,WACnB,OACE,0BACE","sources":["views/HomePageView.jsx"],"sourcesContent":["const HomePageView = () => {\n  return (\n    <div>\n      <h1>Greetings!! We are glad to welcome you on our site!</h1>\n    </div>\n  );\n};\nexport default HomePageView;\n"],"names":[],"sourceRoot":""}
