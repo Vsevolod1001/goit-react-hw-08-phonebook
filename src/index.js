@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/hw8-test/">
+        <BrowserRouter basename="/goit_react_hw_08_phonebook/">
           <App />
         </BrowserRouter>
       </PersistGate>
